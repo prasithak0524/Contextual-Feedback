@@ -1,0 +1,422 @@
+[
+  {
+    "id": "7da13e01-d179-4c28-b122-3d0b4f0a57d3",
+    "reason": "connection_issues",
+    "text": "hello welcome",
+    "rating": 4,
+    "timestamp": "2025-05-07T10:31:47.260002",
+    "analysis": {
+      "valid": false,
+      "confidence": "54.5",
+      "sentiment": {
+        "type": "POSITIVE",
+        "score": "0.70"
+      },
+      "grammar": {
+        "errors": 3,
+        "readability": "77.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      }
+    }
+  },
+  {
+    "id": "907a8385-4d22-4e8d-a4c6-bbb921158cf4",
+    "reason": "video_quality",
+    "text": "good video quality",
+    "rating": 4,
+    "timestamp": "2025-05-07T10:30:30.877295",
+    "analysis": {
+      "valid": true,
+      "confidence": "62.2",
+      "sentiment": {
+        "type": "POSITIVE",
+        "score": "0.75"
+      },
+      "grammar": {
+        "errors": 4,
+        "readability": "76.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "7.0"
+      }
+    }
+  },
+  {
+    "id": "b22a8269-0d1d-40dc-84a9-f115b0c0358e",
+    "reason": "video_quality",
+    "text": "bad video quality",
+    "rating": 2,
+    "timestamp": "2025-05-07T10:30:20.293053",
+    "analysis": {
+      "valid": false,
+      "confidence": "52.9",
+      "sentiment": {
+        "type": "NEGATIVE",
+        "score": "0.25"
+      },
+      "grammar": {
+        "errors": 4,
+        "readability": "76.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "7.0"
+      }
+    }
+  },
+  {
+    "id": "aad0d263-5457-4fdf-a82e-bd5177bde8d7",
+    "reason": "meeting_experience",
+    "text": "WORST MEETING EXPERIENCE",
+    "rating": 1,
+    "timestamp": "2025-05-07T10:29:29.763723",
+    "analysis": {
+      "valid": false,
+      "confidence": "50.2",
+      "sentiment": {
+        "type": "NEGATIVE",
+        "score": "0.10"
+      },
+      "grammar": {
+        "errors": 4,
+        "readability": "76.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "2.5"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "7.0"
+      }
+    }
+  },
+  {
+    "id": "cb2cb1e5-0c11-4937-89f5-7406abbb4f53",
+    "reason": "audio_quality",
+    "text": "It was nice AUDIO",
+    "rating": 5,
+    "timestamp": "2025-05-07T10:27:44.850874",
+    "analysis": {
+      "valid": true,
+      "confidence": "63.7",
+      "sentiment": {
+        "type": "POSITIVE",
+        "score": "0.85"
+      },
+      "grammar": {
+        "errors": 3,
+        "readability": "75.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "7.0"
+      }
+    }
+  },
+  {
+    "id": "cffdff13-ce39-459b-becf-a4fc8a3724da",
+    "reason": "audio_quality",
+    "text": "it was nice",
+    "rating": 4,
+    "timestamp": "2025-05-07T10:26:56.655086",
+    "analysis": {
+      "valid": false,
+      "confidence": "54.5",
+      "sentiment": {
+        "type": "POSITIVE",
+        "score": "0.70"
+      },
+      "grammar": {
+        "errors": 2,
+        "readability": "76.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      }
+    }
+  },
+  {
+    "id": "010312e8-e4b8-4a3b-9616-8657ef40d732",
+    "reason": "audio_quality",
+    "text": "audio shvfjqen jksafb",
+    "rating": 3,
+    "timestamp": "2025-05-07T10:26:17.863678",
+    "analysis": {
+      "valid": false,
+      "confidence": "58.5",
+      "sentiment": {
+        "type": "NEUTRAL",
+        "score": "0.50"
+      },
+      "grammar": {
+        "errors": 4,
+        "readability": "76.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "7.0"
+      }
+    }
+  },
+  {
+    "id": "d536d60f-4dd3-445b-8975-a63b70558c41",
+    "reason": "audio_quality",
+    "text": "audio issues",
+    "rating": 3,
+    "timestamp": "2025-05-07T10:25:17.058766",
+    "analysis": {
+      "valid": false,
+      "confidence": "58.5",
+      "sentiment": {
+        "type": "NEUTRAL",
+        "score": "0.50"
+      },
+      "grammar": {
+        "errors": 3,
+        "readability": "77.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "7.0"
+      }
+    }
+  },
+  {
+    "id": "8ba4ffe3-fd61-4a3a-8bcf-35ff5a8c089c",
+    "reason": "video_quality",
+    "text": "bjkdsdkjbsdvjbdvjv",
+    "rating": 2,
+    "timestamp": "2025-05-07T07:42:10.098556",
+    "analysis": {
+      "valid": false,
+      "confidence": "46.2",
+      "sentiment": {
+        "type": "NEGATIVE",
+        "score": "0.30"
+      },
+      "grammar": {
+        "errors": 2,
+        "readability": "78.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      }
+    }
+  },
+  {
+    "id": "847aee9b-49af-4d5d-9a1e-447925722761",
+    "reason": "video_quality",
+    "text": "hbiksdfk  dfjbk x",
+    "rating": 2,
+    "timestamp": "2025-05-07T07:15:13.647266",
+    "analysis": {
+      "valid": false,
+      "confidence": "47.3",
+      "sentiment": {
+        "type": "NEGATIVE",
+        "score": "0.30"
+      },
+      "grammar": {
+        "errors": 4,
+        "readability": "76.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.3"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      }
+    }
+  },
+  {
+    "id": "4add919e-8896-4d34-83ee-a84d09fe0934",
+    "reason": "audio_quality",
+    "text": "audio issues in the video",
+    "rating": 3,
+    "timestamp": "2025-05-07T07:11:40.121906",
+    "analysis": {
+      "valid": false,
+      "confidence": "58.5",
+      "sentiment": {
+        "type": "NEUTRAL",
+        "score": "0.50"
+      },
+      "grammar": {
+        "errors": 4,
+        "readability": "74.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "7.0"
+      }
+    }
+  },
+  {
+    "id": "be3726b4-efa6-4dbf-bf86-6f7ebe6a8d17",
+    "reason": "connection_issues",
+    "text": "connection error due this problem",
+    "rating": 2,
+    "timestamp": "2025-05-07T07:10:36.359086",
+    "analysis": {
+      "valid": false,
+      "confidence": "53.2",
+      "sentiment": {
+        "type": "NEGATIVE",
+        "score": "0.30"
+      },
+      "grammar": {
+        "errors": 4,
+        "readability": "74.9"
+      },
+      "specificity": {
+        "level": "MEDIUM",
+        "score": "5.0"
+      },
+      "politeness": {
+        "level": "NEUTRAL",
+        "score": "3.0"
+      },
+      "temporal": {
+        "status": "Absent",
+        "expressions": "none"
+      },
+      "relevance": {
+        "level": "MEDIUM",
+        "score": "7.0"
+      }
+    }
+  }
+]

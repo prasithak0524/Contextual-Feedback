@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Validator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+      
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <div style="display: flex; align-items: baseline;">
+                    <img src="{{ url_for('static', filename='logo.png') }}" alt="Education Technology Logo" style="width: 100px; height: auto;" onerror="this.style.display='none'">
+                    <h1 style="margin-left: 8px;">EDUCATION TECHNOLOGY</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="historyToggleBtn" class="btn btn-secondary">
+                        <i class="fas fa-history"></i>
+                        <span>Show History</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="container main-content">
+            <!-- Feedback Input Section -->
+            <div class="panel feedback-panel">
+                <h2 class="panel-title">Submit Your Feedback</h2>
+                
+                <div class="form-group">
+                    <label for="feedbackReason" class="form-label">Type of Feedback</label>
+                    <select id="feedbackReason" class="form-control">
+                        <option value="">-- Select reason --</option>
+                        <option value="connection_issues">Connection Issues</option>
+                        <option value="audio_quality">Audio Quality</option>
+                        <option value="video_quality">Video Quality</option>
+                        <option value="meeting_experience">Meeting Experience</option>
+                        <option value="feature_request">Feature Request</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackText" class="form-label">Your Feedback</label>
+                    <textarea id="feedbackText" class="form-control" placeholder="Describe your experience in detail..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Rating</label>
+                    <div class="rating-container">
+                        <div class="stars">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <span class="rating-text">No rating</span>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="analyzeBtn" class="btn btn-primary">
+                        <i class="fas fa-bolt"></i>
+                        <span>Analyze Feedback</span>
+                    </button>
+                    <button id="clearFormBtn" class="btn btn-outline">
+                        <i class="fas fa-redo"></i>
+                        <span>Clear Form</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analysis Results Section -->
+            <div class="panel results-panel">
+                <h2 class="panel-title">Analysis Results</h2>
+                
+                <!-- Empty State -->
+                <div id="emptyState" class="analysis-state active">
+                    <i class="fas fa-search empty-icon"></i>
+                    <p class="state-message">Fill out the form and click "Analyze Feedback" to see results</p>
+                </div>
+                
+                <!-- Loading State -->
+                <div id="loadingState" class="analysis-state">
+                    <div class="loader"></div>
+                    <p class="state-message">Analyzing your feedback...</p>
+                </div>
+                
+                <!-- Results Container -->
+                <div id="resultsContainer" class="results-container">
+                    <!-- Validation Result -->
+                    <div id="validationResult" class="validation-result">
+                        <i class="result-icon fas fa-check-circle"></i>
+                        <div>
+                            <div class="result-title">Valid Feedback</div>
+                            <div class="result-confidence">Confidence: 87.5%</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Analysis Features -->
+                    <div class="feature-grid">
+                        <!-- Sentiment -->
+                        <div class="feature-card">
+                            <div class="feature-title">Sentiment Analysis</div>
+                            <div class="feature-main">
+                                <i id="sentimentIcon" class="feature-icon fas fa-thumbs-up"></i>
+                                <div id="sentimentLabel" class="feature-value">POSITIVE</div>
+                            </div>
+                            <div id="sentimentScore" class="feature-details">Score: 0.75</div>
+                        </div>
+                        
+                        <!-- Grammar -->
+                        <div class="feature-card">
+                            <div class="feature-title">Grammar Check</div>
+                            <div class="feature-main">
+                                <i class="feature-icon fas fa-spell-check"></i>
+                                <div id="grammarErrors" class="feature-value">2 errors</div>
+                            </div>
+                            <div id="readabilityScore" class="feature-details">Readability: 85.3</div>
+                        </div>
+                        
+                        <!-- Specificity -->
+                        <div class="feature-card">
+                            <div class="feature-title">Specificity Level</div>
+                            <div class="feature-main">
+                                <i class="feature-icon fas fa-ruler"></i>
+                                <div id="specificityLevel" class="feature-value">HIGH</div>
+                            </div>
+                            <div id="specificityScore" class="feature-details">Score: 8.5/10</div>
+                        </div>
+                        
+                        <!-- Politeness -->
+                        <div class="feature-card">
+                            <div class="feature-title">Politeness Meter</div>
+                            <div class="feature-main">
+                                <i class="feature-icon fas fa-handshake"></i>
+                                <div id="politenessLevel" class="feature-value">POLITE</div>
+                            </div>
+                            <div id="politenessScore" class="feature-details">Score: 4.2</div>
+                        </div>
+                        
+                        <!-- Temporal Context -->
+                        <div class="feature-card">
+                            <div class="feature-title">Temporal Context</div>
+                            <div class="feature-main">
+                                <i class="feature-icon fas fa-calendar-alt"></i>
+                                <div id="temporalStatus" class="feature-value">Present</div>
+                            </div>
+                            <div id="temporalExpressions" class="feature-details">yesterday, today</div>
+                        </div>
+                        
+                        <!-- Relevance -->
+                        <div class="feature-card">
+                            <div class="feature-title">Relevance to Issue</div>
+                            <div class="feature-main">
+                                <i class="feature-icon fas fa-bullseye"></i>
+                                <div id="relevanceLevel" class="feature-value">HIGH</div>
+                            </div>
+                            <div id="relevanceScore" class="feature-details">Score: 9.2/10</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Processing Time -->
+                    <div id="processingTime" class="processing-time">
+                        <i class="fas fa-stopwatch"></i>
+                        <span>Processed in 1.234 seconds</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- History Panel -->
+        <div id="historyPanel" class="history-panel">
+            <div class="history-content">
+                <div class="history-header">
+                    <h2 class="panel-title">Feedback History</h2>
+                    <button id="closeHistoryBtn" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <button id="clearHistoryBtn" class="btn btn-outline-small">
+                    <i class="fas fa-trash-alt"></i>
+                    <span>Clear All History</span>
+                </button>
+                
+                <div id="emptyHistory" class="empty-history">
+                    <i class="fas fa-history empty-icon"></i>
+                    <p>No feedback history yet</p>
+                </div>
+                
+                <div id="historyItems">
+                    <div id="historyList" class="history-list">
+                        <!-- History items will be inserted here via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

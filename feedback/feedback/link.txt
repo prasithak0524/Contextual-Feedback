@@ -1,0 +1,7 @@
+Download the wheel files manually:
+
+        Sachem: https://pypi.org/project/SQLAlchemy/#files
+
+        databases: https://pypi.org/project/databases/#files
+
+pip install aiosqlite
