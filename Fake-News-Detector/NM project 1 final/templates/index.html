@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Fake News Detection - Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Fake News Detection on Reddit Posts</h1>
+        <p>Use machine learning to identify fake news in Reddit posts with high accuracy.</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="card">
+        <h2 class="card-title">Analyze a Reddit Post</h2>
+        <p>Enter the text of a Reddit post below to check if it's real or fake news.</p>
+        
+        <form id="predict-form">
+            <div class="form-group">
+                <label for="text-input" class="form-label">Post Text</label>
+                <textarea id="text-input" class="form-control" placeholder="Enter the Reddit post text here..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Analyze</button>
+        </form>
+        
+        <div id="loading" style="display: none; text-align: center; margin-top: 20px;">
+            <p>Analyzing text...</p>
+        </div>
+        
+        <div id="result-container" class="result" style="display: none;">
+            <h3 id="result-title" class="result-title">Result</h3>
+            <p id="result-message"></p>
+            
+            <div>
+                <h4>Probability Breakdown:</h4>
+                
+                <p>Real News:</p>
+                <div class="probability-bar">
+                    <div id="real-fill" class="probability-fill real-fill" style="width: 0%;">
+                        <span id="real-probability">0%</span>
+                    </div>
+                </div>
+                
+                <p>Fake News:</p>
+                <div class="probability-bar">
+                    <div id="fake-fill" class="probability-fill fake-fill" style="width: 0%;">
+                        <span id="fake-probability">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">About This Project</h2>
+        <p>This project uses machine learning to detect fake news in Reddit posts. The model has been trained on a dataset of labeled Reddit posts to distinguish between real and fake news.</p>
+        <p>Key features:</p>
+        <ul>
+            <li>Text preprocessing using NLTK</li>
+            <li>Feature extraction using TF-IDF</li>
+            <li>Machine learning classification models</li>
+            <li>Interactive web interface for real-time analysis</li>
+        </ul>
+        <a href="/about" class="btn">Learn More</a>
+    </div>
+</div>
+{% endblock %}

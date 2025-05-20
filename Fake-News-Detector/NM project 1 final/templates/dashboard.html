@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Fake News Detection - Dashboard{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Model Performance Dashboard</h1>
+        <p>View metrics and visualizations from the fake news detection model.</p>
+    </div>
+</section>
+
+<div class="container">
+    {% if visualizations %}
+    <div class="card">
+        <h2 class="card-title">Model Visualizations</h2>
+        
+        <div class="form-group">
+            <label for="visualization-select" class="form-label">Select Visualization</label>
+            <select id="visualization-select" class="form-control">
+                <option value="">-- Select a visualization --</option>
+                {% for viz in visualizations %}
+                <option value="{{ viz }}">{{ viz.replace('_', ' ').replace('.png', '').title() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="visualization-container">
+            <img id="visualization-image" class="visualization-img" style="display: none;" alt="Visualization">
+        </div>
+    </div>
+    {% endif %}
+    
+    <div class="card">
+        <h2 class="card-title">Model Explanation</h2>
+        
+        <div class="metrics-container">
+            <div class="metric-card">
+                <h3>What is TF-IDF?</h3>
+                <p>Term Frequency-Inverse Document Frequency is a numerical statistic that reflects how important a word is to a document in a collection. It helps the model identify distinctive words that characterize fake vs. real news.</p>
+            </div>
+            
+            <div class="metric-card">
+                <h3>Feature Importance</h3>
+                <p>The model identifies certain words and phrases that are strong indicators of fake or real news. These features help the model make accurate predictions.</p>
+            </div>
+            
+            <div class="metric-card">
+                <h3>Model Evaluation</h3>
+                <p>The model is evaluated using metrics like accuracy, precision, recall, and F1 score. These metrics help us understand how well the model performs on new data.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">How It Works</h2>
+        <p>The fake news detection system works through the following steps:</p>
+        
+        <ol>
+            <li><strong>Text Preprocessing:</strong> Clean and normalize text by removing special characters, converting to lowercase, and removing stopwords.</li>
+            <li><strong>Feature Extraction:</strong> Convert text to numerical features using TF-IDF vectorization.</li>
+            <li><strong>Model Training:</strong> Train multiple machine learning models on the labeled data.</li>
+            <li><strong>Model Selection:</strong> Select the best performing model based on evaluation metrics.</li>
+            <li><strong>Prediction:</strong> Use the selected model to predict whether new posts are real or fake.</li>
+        </ol>
+        
+        <p>The system also provides probability scores to indicate the confidence level of each prediction.</p>
+    </div>
+</div>
+{% endblock %}

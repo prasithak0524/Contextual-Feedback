@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Fake News Detection - About{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>About This Project</h1>
+        <p>Learn more about the fake news detection project and methodology.</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="card">
+        <h2 class="card-title">Fake News Detection on Reddit Posts</h2>
+        <p>This project implements a machine learning model to detect fake news in Reddit posts. It includes data preprocessing, feature extraction, model training, and a web interface for demonstration.</p>
+        
+        <h3>Project Structure</h3>
+        <ul>
+            <li><code>data_preprocessing.py</code>: Handles data cleaning and preparation</li>
+            <li><code>feature_extraction.py</code>: Extracts features from text data</li>
+            <li><code>model_training.py</code>: Trains and evaluates the machine learning model</li>
+            <li><code>predict.py</code>: Makes predictions on new data</li>
+            <li><code>flask_app.py</code>: Flask web application for demonstration</li>
+            <li><code>models/</code>: Directory to store trained models</li>
+            <li><code>utils.py</code>: Utility functions used across the project</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">Dataset</h2>
+        <p>The project uses two datasets:</p>
+        <ul>
+            <li><code>xy_train.csv</code>: Training data with labels (real/fake)</li>
+            <li><code>x_test.csv</code>: Test data for prediction</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">Model</h2>
+        <p>The system uses a machine learning pipeline with TF-IDF vectorization and a classifier (Logistic Regression, Random Forest, or SVM) to detect fake news.</p>
+        
+        <h3>Model Pipeline</h3>
+        <ol>
+            <li><strong>Text Preprocessing:</strong> Clean and normalize text by removing special characters, converting to lowercase, and removing stopwords.</li>
+            <li><strong>Feature Extraction:</strong> Convert text to numerical features using TF-IDF vectorization.</li>
+            <li><strong>Model Training:</strong> Train multiple machine learning models on the labeled data.</li>
+            <li><strong>Model Selection:</strong> Select the best performing model based on evaluation metrics.</li>
+            <li><strong>Prediction:</strong> Use the selected model to predict whether new posts are real or fake.</li>
+        </ol>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">Technologies Used</h2>
+        <ul>
+            <li><strong>Python:</strong> Primary programming language</li>
+            <li><strong>scikit-learn:</strong> Machine learning library for model training and evaluation</li>
+            <li><strong>NLTK:</strong> Natural Language Toolkit for text preprocessing</li>
+            <li><strong>Flask:</strong> Web framework for the user interface</li>
+            <li><strong>Pandas & NumPy:</strong> Data manipulation and analysis</li>
+            <li><strong>Matplotlib & Seaborn:</strong> Data visualization</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

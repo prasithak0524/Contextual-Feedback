@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Fake News Detection - Predictions{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Test Data Predictions</h1>
+        <p>View predictions made on the test dataset.</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="card">
+        <h2 class="card-title">Predictions on Test Data</h2>
+        
+        {% if predictions_exist %}
+        <div class="table-container">
+            <table class="predictions-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Text</th>
+                        <th>Prediction</th>
+                        <th>Real Probability</th>
+                        <th>Fake Probability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pred in predictions %}
+                    <tr>
+                        <td>{{ pred.ID }}</td>
+                        <td>{{ pred.text }}</td>
+                        <td class="{% if pred.predicted_class == 'Real' %}label-real{% else %}label-fake{% endif %}">
+                            {{ pred.predicted_class }}
+                        </td>
+                        <td>{{ "%.2f"|format(pred.real_probability * 100) }}%</td>
+                        <td>{{ "%.2f"|format(pred.fake_probability * 100) }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No predictions available. Run the prediction script first to generate predictions on the test data.</p>
+        <code>python predict.py</code>
+        {% endif %}
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">Understanding the Predictions</h2>
+        <p>The table above shows the model's predictions on the test dataset. Here's what each column means:</p>
+        
+        <ul>
+            <li><strong>ID:</strong> The unique identifier for each Reddit post.</li>
+            <li><strong>Text:</strong> The content of the Reddit post.</li>
+            <li><strong>Prediction:</strong> Whether the model classified the post as real or fake news.</li>
+            <li><strong>Real Probability:</strong> The model's confidence that the post is real news (0-100%).</li>
+            <li><strong>Fake Probability:</strong> The model's confidence that the post is fake news (0-100%).</li>
+        </ul>
+        
+        <p>The model makes predictions based on patterns it learned from the training data. Higher probability values indicate greater confidence in the prediction.</p>
+    </div>
+</div>
+{% endblock %}
